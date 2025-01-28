@@ -3,12 +3,15 @@
     <script>
         alert("Hi!")
         let doIt=()=>{
-            x=document.getElementById("bw").value;
+            if(x=document.getElementById("bw").value)
+        {
             if(x>15){
                 alert ("Overweight");
 
             }
-            a=document.getElementById("multiples").value;
+        }
+        else if( a=document.getElementById("multiples").value)
+           {
             if(a%3==0 || a%5==0 )
             {
                 for(a=0;a<=1000;a++);
@@ -16,6 +19,7 @@
 
             }
             alert("sum");
+        }
             //{ let sum = 0; for (let i = 0; i <= number; i++) { if (i % 3 === 0 || i % 5 === 0) { sum += i; } } }
             
             alert("done");
