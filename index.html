@@ -52,19 +52,16 @@
 
           //Exercise 4
           function sumOfMultiples(a, b, l) {
-            let array = []; 
+            let arrays = []; 
             let sum = 0;
 
            
             for (let i = 1; i <= l; i++) {
                 if (i % a === 0 || i % b === 0) {
-                    array.push(i);  
+                    arrays.push(i);  
                     sum += i;           
                 }
             }
-
-            
-            alert("Multiples of a or b in the range: " + array);
 
             return sum;
         }
