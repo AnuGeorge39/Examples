@@ -36,10 +36,17 @@
                 }
             }
             alert("sum is " + sum);
-          //  return sum;
+            return sum;
             
         }
-                        
+        function Click() {
+            let a = document.getElementById("a").value;
+            let b = document.getElementById("b").value;
+            let n = document.getElementById("n").value;
+            
+            let result = sumOfMultiples(a, b, n);
+            alert("The sum of multiples of " + a + " or " + b + " below " + n + " is: " + result);
+        }           
           //  alert("done");
 
         
@@ -78,7 +85,7 @@
 <input type="text" id="b">
 <label>Enter value of n</label>
 <input type="text" id="n" >
-        <p>The prompt: <input type="text" id ="sumOfMultiples", width ="6"><button onclick="Click()">Press me!</button></p>
+        <p>The prompt: <input type="text" id ="Multiples", width ="6"><button onclick="Click()">Press me!</button></p>
 
 </body>
 </html>
