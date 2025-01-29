@@ -24,19 +24,27 @@
                     sum += a; 
                 } 
             }
-            alert("sum is" + sum);
+            alert("sum is " + sum);
         }
     }
-    
-            //{ let sum = 0; for (let i = 0; i <= number; i++) { if (i % 3 === 0 || i % 5 === 0) { sum += i; } } }
-            
+
+    function sumOfMultiples(a, b, n) {
+            let sum = 0;
+            for (let i = 1; i < n; i++) {
+                if (i % a === 0 || i % b === 0) {
+                    sum += i;
+                }
+            }
+            return sum;
+        }
+                        
             alert("done");
 
         
     </script>
 </head>
 <body>
-    <p>Haiiii</p>
+    
     <p>This is body text</p>
     <p>Hello World!</p>
     <p>Excerise 1:</p>
@@ -62,7 +70,13 @@
             <p>Create a function to return the sum of all the multiples of a or b below n</p>
             <p>Call the function and alert the user to the correct answer when they press the button.</p>
 </p>
-        <p>The prompt: <button onclick="doIt()">Press me!</button></p>
+<label>Enter value of a </label>
+<input type="text" id="a" >
+<label>Enter value of b</label>
+<input type="text" id="b">
+<label>Enter value of n</label>
+<input type="text" id="n" >
+        <p>The prompt: <input type="text" id ="function", width ="6"><button onclick="Click()">Press me!</button></p>
 
 </body>
 </html>
