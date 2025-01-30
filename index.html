@@ -78,29 +78,7 @@
         }
 
 
-        //Exercise 5
-
-        function sumOfMultiples(a, l) {
-            let sum = 0;
-            for (let i = 0; i < l.length; i++) {
-                if (l[i] % a[0] === 0 || l[i] % a[1] === 0) {
-                    sum += l[i];  
-                }
-            }
-            
-            return sum;
-        }
-
-        
-        function Click2() {
-           
-            let a = document.getElementById("a").value.split(',').map(Number);  
-            let l = document.getElementById("l").value.split(',').map(Number);  
-            let result = sumOfMultiples(a, l);
-            alert("The sum of multiples of " + a[0] + " or " + a[1] + " in the array l is: " + result);
-        }
-
-
+       
         
     </script>
 </head>
