@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="a">Enter a (comma-separated, length 2):</label>
+    <input type="text" id="a" style="width: 300px;">
+    <br>
+    <label for="l">Enter l (comma-separated list):</label>
+    <input type="text" id="l" style="width: 300px;">
+    <br>
+    <button onclick="calculateSum()">Calculate</button>
+
+    <script>
+        function f5(a, l) {
+            if (!Array.isArray(a) || !Array.isArray(l) || a.length !== 2 || a.some(num => !Number.isInteger(num)) || l.some(num => !Number.isInteger(num))) {
+                throw new Error("Invalid input types. Expected two-element array and an array of integers.");
+            }
+            return l.reduce((sum, num) => (num % a[0] === 0 || num % a[1] === 0) ? sum + num : sum, 0);
+        }
+
+        function calculateSum() {
+            let a = document.getElementById("a").value.split(',').map(Number);
+            let l = document.getElementById("l").value.split(',').map(Number);
+            
+            if (a.length !== 2 || a.some(num => !Number.isInteger(num)) || l.some(num => !Number.isInteger(num))) {
+                alert("Please enter valid integers. 'a' must have exactly 2 numbers.");
+                return;
+            }
+
+            let result = f5(a, l);
+            alert("The sum of all multiples of " + a[0] + " or " + a[1] + " in the list is: " + result);
+        }
+    </script>
+</body>
+</html>
