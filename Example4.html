@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 4</title>
+    
+</head>
+<body>
+    <label>Enter value of a:</label>
+    <input type="number" id="a">
+    <br>
+    <label>Enter value of b:</label>
+    <input type="number" id="b">
+    <br>
+    <label>Enter value of l:</label>
+    <input type="text" id="l">
+    <br>
+    <button onclick="calculateSum()">Submit</button>
+
+    <script>
+        function f4(a, b, l) {
+            return l.reduce((sum, num) => (num % a === 0 || num % b === 0) ? sum + num : sum, 0);
+        }
+
+        function calculateSum() {
+            let a = parseInt(document.getElementById("a").value);
+            let b = parseInt(document.getElementById("b").value);
+            let l = document.getElementById("l").value.split(',').map(Number);
+            
+            let result = f4(a, b, l);
+            alert("The sum of all multiples of " + a + " or " + b + " is: " + result);
+        }
+    </script>
+    
+</body>
+</html>
