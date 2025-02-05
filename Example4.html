@@ -20,17 +20,21 @@
     <script>
         function f4(a, b, l) 
         {
-            // Convert strings to numbers
             a = parseInt(a);
-            b = parseInt(b);
+            b = parseInt(b); 
+
+            return l.filter(num => num % a === 0 || num % b === 0)
+                    .reduce((sum, num) => sum + num, 0);
+            // Convert strings to numbers
+           
             
             // Filter numbers that are multiples of a or b
-            const multiples = l.filter(num => num % a === 0 || num % b === 0);
-            alert("multiples" + multiples);
+           // const multiples = l.filter(num => num % a === 0 || num % b === 0);
+            //alert("multiples" + multiples);
             // Sum the multiples
-            const sum = multiples.reduce((acc, curr) => acc + curr, 0);
-            alert (sum);
-            return sum;
+           // const sum = multiples.reduce((acc, curr) => acc + curr, 0);
+           // alert (sum);
+           // return sum;
             
         }
 
