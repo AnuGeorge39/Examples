@@ -14,14 +14,15 @@
     <button onclick="calculateSum()">Calculate</button>
 
     <script>
-        function f5(a, inte) {
-            if ( a.length !== 2 ){
+        function f5(x, y) {
+            if ( x.length !== 2 ){
                            throw new Error("Invalid input types.");
             }
-            return inte.reduce((sum, num) => (num % a[0] === 0 || num % a[1] === 0) ? sum + num : sum, 0);
+            return y.reduce((sum, num) => (num % x[0] === 0 || num % x[1] === 0) ? sum + num : sum, 0);
         }
 
-        function calculateSum() {
+        function calculateSum()
+         {
             const a = document.getElementById("a").value;
             const b = document.getElementById("l").value;
 
@@ -29,13 +30,14 @@
             const c = a.split(',').map(num => parseInt(num.trim()));
             const d = b.split(',').map(num => parseInt(num.trim()));
             
-            if (c.length !== 2 || c.some(num => !Number.isInteger(num)) || d.some(num => !Number.isInteger(num))) {
+            if (c.length !== 2 || !d) 
+            {
                 alert("Please enter valid integers.");
                 return;
             }
 
-            let result = f5(a, d);
-            alert("The sum of all multiples of " + a[0] + " or " + a[1] + " in the list is: " + result);
+            const result = f5(c, d);
+            alert("The sum of all multiples of " + c[0] + " or " + c[1] + " in the list is: " + result);
         }
     </script>
 </body>
