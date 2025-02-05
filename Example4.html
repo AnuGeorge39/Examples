@@ -36,18 +36,20 @@
 
         function calculateSum() 
         {
-            let a = parseInt(document.getElementById("a").value);
-            let b = parseInt(document.getElementById("b").value);
-            let l = document.getElementById("l").value;
-            const c = l.split(',').map(num => parseInt(num.trim()));
+            const a = document.getElementById("a").value;
+            const b = document.getElementById("b").value;
+            const l = document.getElementById("l").value;
             
+            // Convert array string to actual array of numbers
+            const c = l.split(',').map(num => parseInt(num.trim()));
+            alert (c);
             //validate input values
             if(!a||!b||!c)
         {
             alert("Please fill the fields");
             return;
         }
-            let result = f4(a, b, l);
+            const result = f4(a, b, l);
             alert("The sum of all multiples of " + a + " or " + b + " is: " + result);
         }
     </script>
