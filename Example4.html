@@ -12,7 +12,7 @@
     <label>Enter value of b:</label>
     <input type="number" id="b">
     <br>
-    <label>Enter value of l:</label>
+    <label>Enter Array values:</label>
     <input type="text" id="l">
     <br>
     <button onclick="calculateSum()">Submit</button>
@@ -20,29 +20,20 @@
     <script>
         function f4(a, b, l) 
         {
-            a = parseInt(a);
-            b = parseInt(b); 
+           // a = parseInt(a);
+          //  b = parseInt(b); 
 
             return l.filter(num => num % a === 0 || num % b === 0)
                     .reduce((sum, num) => sum + num, 0);
-            // Convert strings to numbers
-           
-            
-            // Filter numbers that are multiples of a or b
-           // const multiples = l.filter(num => num % a === 0 || num % b === 0);
-            //alert("multiples" + multiples);
-            // Sum the multiples
-           // const sum = multiples.reduce((acc, curr) => acc + curr, 0);
-           // alert (sum);
-           // return sum;
-            
-        }
+             }
 
         function calculateSum() 
         {
+
             const a = document.getElementById("a").value;
             const b = document.getElementById("b").value;
             const l = document.getElementById("l").value;
+
             
             // Convert array string to actual array of numbers
             const c = l.split(',').map(num => parseInt(num.trim()));
