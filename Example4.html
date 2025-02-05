@@ -23,10 +23,9 @@
             // Convert strings to numbers
             a = parseInt(a);
             b = parseInt(b);
-            alert(a);
-            alert(b);
+            
             // Filter numbers that are multiples of a or b
-            const multiples = arr.filter(num => num % a === 0 || num % b === 0);
+            const multiples = l.filter(num => num % a === 0 || num % b === 0);
             alert("multiples" + multiples);
             // Sum the multiples
             const sum = multiples.reduce((acc, curr) => acc + curr, 0);
