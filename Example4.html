@@ -18,12 +18,12 @@
     <button onclick="calculateSum()">Submit</button>
 
     <script>
-        function f4(a, b, l) 
+        function f4(a, b, arr) 
         {
            // a = parseInt(a);
           //  b = parseInt(b); 
 
-            return l.filter(num => num % a === 0 || num % b === 0)
+            return arr.filter(num => num % a === 0 || num % b === 0)
                     .reduce((sum, num) => sum + num, 0);
              }
 
@@ -44,7 +44,7 @@
             alert("Please fill the fields");
             return;
         }
-            const result = f4(a, b, l);
+            const result = f4(a, b, c);
             alert("The sum of all multiples of " + a + " or " + b + " is: " + result);
         }
     </script>
