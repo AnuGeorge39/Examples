@@ -22,9 +22,10 @@
         {
            // a = parseInt(a);
           //  b = parseInt(b); 
-
-            return arr.filter(num => num % a === 0 || num % b === 0)
-                    .reduce((sum, num) => sum + num, 0);
+const multiples =arr.filter(num => num % a === 0 || num % b === 0);
+const sumvalue  = multiples.reduce((sum, num) => sum + num, 0);
+            return sumvalue;
+                    
              }
 
         function calculateSum() 
