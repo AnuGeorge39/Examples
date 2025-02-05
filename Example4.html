@@ -18,17 +18,35 @@
     <button onclick="calculateSum()">Submit</button>
 
     <script>
-        function f4(a, b, l) {
-            return l.reduce((sum, num) => (num % a === 0 || num % b === 0) ? sum + num : sum, 0);
+        function f4(a, b, l) 
+        {
+            // Convert strings to numbers
+            a = parseInt(a);
+            b = parseInt(b);
+            
+            // Filter numbers that are multiples of a or b
+            const multiples = arr.filter(num => num % a === 0 || num % b === 0);
+            
+            // Sum the multiples
+            const sum = multiples.reduce((acc, curr) => acc + curr, 0);
+            
+            return sum;
+            
         }
 
-        function calculateSum() {
+        function calculateSum() 
+        {
             let a = parseInt(document.getElementById("a").value);
             let b = parseInt(document.getElementById("b").value);
             let l = document.getElementById("l").value.split(',').map(Number);
-            function f4(a,b,l){
-           //     return l.map(num,)
-            }
+            const c = l.split(',').map(num => parseInt(num.trim()));
+            
+            //validate input values
+            if(!a||!b||!c)
+        {
+            alert("Please fill the fields");
+            return;
+        }
             let result = f4(a, b, l);
             alert("The sum of all multiples of " + a + " or " + b + " is: " + result);
         }
