@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="basket">Basket:</label>
+    <input type="text" id="basket" style="width: 300px;">
+    <br>
+    <label for="l">Price:</label>
+    <input type="text" id="price" style="width: 300px;">
+    <br>
+    <button onclick="calculatePrice()">Calculate</button>
+<script>
+    function f7(pbasket,pprices){
+        const total = {
+                        Basket:pbasket,
+                        Price:pprices,
+  
+                    }
+
+// Create a copy
+const x = total;
+
+        const totals = x.Basket*x.Price;
+        return totals;
+
+    }
+    function calculatePrice()
+        {
+            const baskets =document.getElementById("basket").value;
+            const prices = document.getElementById("price").value;
+
+            
+            if (!baskets || !prices) 
+            {
+                alert("Please enter valid data.");
+                return;
+            }
+
+            const result = f7(baskets, prices);
+            alert("The sum of basket is :"  + result);
+        }
+    </script>
+</body>
+</html>
