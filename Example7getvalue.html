@@ -18,12 +18,12 @@
     <button onclick="calculatePrice()">Calculate Price </button>
 <script>
     
-       // const basket = {
-                    //    "Banana":2,
-                    //    "Apple":3,
-                    //    "Mango":4
+        const basket = {
+                        "Banana":banana,
+                        "Apple":apple,
+                        "Mango":mango
   
-                    //}
+                    }
                     const price = {
                         "Banana":2.50,
                         "Apple":3.75,
@@ -36,9 +36,9 @@
 
       //  const totals = x.Basket*x.Price;
       //  return totals;
-      function f7(banana,apple,mango, prices) {
+      function f7(basket, prices) {
        let totalCost = 0;
-    alert (banana);
+    
     for (let product in basket) {
         if (prices[product]!==undefined) {
             totalCost += basket[product] * prices[product];
