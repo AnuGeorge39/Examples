@@ -36,7 +36,7 @@
     let totalCost = 0;
     
     for (let product in basket) {
-        if (prices.hasOwnProperty(product)) {
+        if (prices[product]!==0) {
             totalCost += basket[product] * prices[product];
         }
     }
@@ -46,11 +46,12 @@
 
 
 
-sum(t1, t2);
+
 
     
     function calculatePrice()
         {
+            alert("press");
            // const baskets =document.getElementById("basket").value;
            // const prices = document.getElementById("price").value;
 
