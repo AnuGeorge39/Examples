@@ -5,13 +5,13 @@
     <title>Document</title>
 </head>
 <body>
-    <label for="basket"> Price of Banana Basket:</label>
+    <!--<label for="basket"> Price of Banana Basket:</label>
     <input type="text" id="basket" style="width: 300px;">
     <br>
     <label for="l">Price:</label>
     <input type="text" id="price" style="width: 300px;">
-    <br>
-    <button onclick="calculatePrice()">Calculate</button>
+    <br>-->
+    <button onclick="calculatePrice()">Calculate </button>
 <script>
     
         const basket = {
@@ -48,15 +48,15 @@ sum(t1, t2);
     
     function calculatePrice()
         {
-            const baskets =document.getElementById("basket").value;
-            const prices = document.getElementById("price").value;
+           // const baskets =document.getElementById("basket").value;
+           // const prices = document.getElementById("price").value;
 
             
-            if (!baskets || !prices) 
-            {
-                alert("Please enter valid data.");
-                return;
-            }
+           // if (!baskets || !prices) 
+           // {
+            //    alert("Please enter valid data.");
+            //    return;
+           // }
 
             const result = f7(baskets, prices);
             alert("The sum of basket is :"  + result);
