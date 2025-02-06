@@ -36,7 +36,7 @@
     let totalCost = 0;
     
     for (let product in basket) {
-        if (prices[product]!==0) {
+        if (prices[product]!==undefined) {
             totalCost += basket[product] * prices[product];
         }
     }
@@ -51,7 +51,6 @@
     
     function calculatePrice()
         {
-            alert("press");
            // const baskets =document.getElementById("basket").value;
            // const prices = document.getElementById("price").value;
 
@@ -62,7 +61,7 @@
             //    return;
            // }
 
-            const result = f7(baskets, prices);
+            const result = f7(basket,price);
             alert("The sum of basket is :"  + result);
         }
     </script>
