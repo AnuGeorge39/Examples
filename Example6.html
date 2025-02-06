@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="a">Enter a (comma-separated list):</label>
+    <input type="text" id="a" style="width: 300px;">
+    <br>
+    <label for="l">Enter l (comma-separated list):</label>
+    <input type="text" id="l" style="width: 300px;">
+    <br>
+    <button onclick="calculateSum()">Calculate</button>
+
+    <script>
+         function f6(x, y) {
+            const multiples =y.filter(num =>x.some(factor=>factor!==0 && num % factor === 0 ));
+          // Sum the multiples
+           const sumvalue  = multiples.reduce((sum, num) => sum + num, 0);
+            return sumvalue;
+           
+         //   return y.reduce((sum, num) => (num % x[0] === 0 || num % x[1] === 0) ? sum + num : sum, 0);
+        }
+
+        function calculateSum()
+        {
+            const a =document.getElementById("a").value;
+            const b = document.getElementById("l").value;
+
+            const c = a.split(',').map(num => parseInt(num.trim()));
+            const d = b.split(',').map(num => parseInt(num.trim()));
+            if (!c || !d) 
+            {
+                alert("Please enter valid data.");
+                return;
+            }
+
+            const result = f6(c, d);
+            alert("The sum of all multiples of array is :"  + result);
+        }
+    </script>
+
+</body>
+</html>
