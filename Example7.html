@@ -15,15 +15,15 @@
 <script>
     
         const basket = {
-                        Banana:2,
-                        Apple:3,
-                        Mango:4
+                        "Banana":2,
+                        "Apple":3,
+                        "Mango":4
   
                     }
                     const price = {
-                        Banana:2.50,
-                        Apple:3.75,
-                        Mango:4.12
+                        "Banana":2.50,
+                        "Apple":3.75,
+                        "Mango":4.12
   
                     }
 
@@ -32,16 +32,19 @@
 
       //  const totals = x.Basket*x.Price;
       //  return totals;
-      function f7(basketss, pricess) {
-  let sum = {};
-
-  Object.keys(basketss).forEach(key => {
-    if (pricess.hasOwnProperty(key)) {
-      sum[key] = basketss[key] + pricess[key]
-    }  
-  })
-  return sum;
+      function f7(basket, prices) {
+    let totalCost = 0;
+    
+    for (let product in basket) {
+        if (prices.hasOwnProperty(product)) {
+            totalCost += basket[product] * prices[product];
+        }
+    }
+    
+    return totalCost;
 }
+
+
 
 sum(t1, t2);
 
