@@ -1,0 +1,71 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <label for="banana"> Banana :</label>
+    <input type="number" id="banana" style="width: 300px;">
+    <br>
+    <label for="apple"> Apple :</label>
+    <input type="number" id="apple" style="width: 300px;">
+    <br>
+    <label for="mango"> Mango :</label>
+    <input type="number" id="mango" style="width: 300px;">
+    <br>
+    <button onclick="calculatePrice()">Calculate Price </button>
+<script>
+    
+       // const basket = {
+                    //    "Banana":2,
+                    //    "Apple":3,
+                    //    "Mango":4
+  
+                    //}
+                    const price = {
+                        "Banana":2.50,
+                        "Apple":3.75,
+                        "Mango":4.12
+  
+                    }
+
+// Create a copy
+//const x = total;
+
+      //  const totals = x.Basket*x.Price;
+      //  return totals;
+      function f7(banana,apple,mango, prices) {
+       let totalCost = 0;
+    alert (banana);
+    for (let product in basket) {
+        if (prices[product]!==undefined) {
+            totalCost += basket[product] * prices[product];
+        }
+    }
+    
+    return totalCost;
+}
+
+
+    function calculatePrice(banana,apple,mango)
+        {
+            const banana =document.getElementById("banana").value;
+            const apple = document.getElementById("apple").value;
+            const mango = document.getElementById("mango").value;
+
+            
+           // if (!baskets || !prices) 
+           // {
+            //    alert("Please enter valid data.");
+            //    return;
+           // }
+
+            const result = f7(banana,apple,mango);
+            
+        }
+    </script>
+    <!--<p>The sum of basket is :  + "result";</p>-->
+</body>
+</html>
