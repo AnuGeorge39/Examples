@@ -18,19 +18,7 @@
     <button onclick="calculatePrice()">Calculate Price </button>
 <script>
     
-        const basket = {
-                        "Banana":banana,
-                        "Apple":apple,
-                        "Mango":mango
-  
-                    }
-                    const price = {
-                        "Banana":2.50,
-                        "Apple":3.75,
-                        "Mango":4.12
-  
-                    }
-
+        
 // Create a copy
 //const x = total;
 
@@ -56,12 +44,20 @@
             const mango = document.getElementById("mango").value;
 
             
-           // if (!baskets || !prices) 
-           // {
-            //    alert("Please enter valid data.");
-            //    return;
-           // }
-           const result = f7();
+            const basket = {
+                        "Banana":banana,
+                        "Apple":apple,
+                        "Mango":mango
+  
+                    }
+                    const price = {
+                        "Banana":2.50,
+                        "Apple":3.75,
+                        "Mango":4.12
+  
+                    }
+
+           const result = f7(basket,price);
             //const result = f7(banana,apple,mango,price);
             alert("The sum of basket is :"  + result);
         }
