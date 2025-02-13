@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example8</title>
+</head>
+<body>
+    <h2>Example 8</h2><br>
+    <h3>Total cost of items in the basket is:<p id="output"></p></h3>
+    
+    <script>
+
+        
+    class basket
+    {
+            constructor()
+             {
+        this.item = {};
+            }
+            
+        addItem(product, qty)
+        {
+        if (this.item[product])
+         {
+            this.item[product] += qty;
+        } 
+        
+        else 
+        {
+            this.item[product] = qty;
+        }
+        }
+        getCost(prices){
+            for(let value in this.item){
+                let totalcost=0;
+                if(prices[product])
+                {
+                    totalcost +=prices[product]* this.item[product];
+
+                }
+                return totalcost;
+                document.getElementById("output").innerHTML = totalcost;
+            }
+
+        }
+
+    }
+    const basket = new Basket();
+    product.addItem("banana", 3);
+    product.addItem("apple", 2);
+    product.addItem("orange", 4);
+
+    const prices = {
+        banana: 2,  
+        apple: 1.5,
+        orange:2
+};
+    
+    </script>
+</body>
+</html>
