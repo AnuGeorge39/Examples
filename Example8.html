@@ -1,63 +1,63 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shopping Basket</title>
-  <script>
-    // Define the Basket class
-    class Basket {
-      constructor() {
-        // Initialize an empty array to store items in the basket
-        this.items = [];
-      }
-
-      // Method to add item to the basket
-      addItem(product, qty) {
-        // Add an object with product and quantity to the items array
-        this.items.push({ product, qty });
-      }
-
-      // Method to get the total cost of items in the basket
-      getCost(prices) {
-        let totalCost = 0;
-
-        // Loop through the items in the basket
-        for (let item of this.items) {
-          // Multiply the price of the product by the quantity and add to total cost
-          if (prices[item.product]) {
-            totalCost += prices[item.product] * item.qty;
-          }
-        }
-
-        return totalCost;
-      }
-    }
-
-    // Example usage
-    window.onload = function() {
-      // Initialize a new Basket
-      let myBasket = new Basket();
-      
-      // Add some items to the basket (product name and quantity)
-      myBasket.addItem("apple", 2);
-      myBasket.addItem("banana", 3);
-
-      // Define the prices of products
-      const prices = {
-        apple: 1.2,  // $1.2 per apple
-        banana: 0.5, // $0.5 per banana
-        orange: 0.8  // $0.8 per orange
-      };
-
-      // Display the total cost of items in the basket
-      let total = myBasket.getCost(prices);
-      document.getElementById("totalCost").innerHTML = "Total Cost: $" + total.toFixed(2);
-    }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example8</title>
 </head>
 <body>
-  <h1>Shopping Basket</h1>
-  <div id="totalCost"></div>
+    <h2>Example 8</h2><br>
+    
+    <h3>Total cost of items in the basket is:<p id="totalCost"></p></h3>
+    
+    <script>
+
+        
+    class basket
+    {
+            constructor()
+             {
+        this.item = [];
+            }
+            
+        addItem(product, qty)
+        {
+            this.item.push({ product, qty });
+        } 
+        
+        
+        getCost(prices){
+            for(let value of this.item){
+                let totalCost=0;
+                if (prices[value.product])
+                 {
+                totalCost += prices[value.product] * value.qty;
+                 }
+                }
+               
+                return totalCost;
+               
+              //  document.getElementById("output").innerHTML = totalcost;
+            
+
+        }
+
+    }
+    const basket = new Basket();
+    basket.addItem("banana", 3);
+    basket.addItem("apple", 2);
+    basket.addItem("banana", 4);
+
+    const prices = {
+        banana: 2,  
+        apple: 1.5,
+        
+    }
+
+        let total = basket.getCost(prices);
+        document.getElementById("totalCost").innerHTML = "Total Cost: $" + total.toFixed(2);
+
+
+    
+    </script>
 </body>
 </html>
