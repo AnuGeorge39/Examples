@@ -16,42 +16,36 @@
     {
             constructor()
              {
-        this.item = {};
+        this.item = [];
             }
             
         addItem(product, qty)
         {
-        if (this.item[product])
-         {
-            this.item[product] += qty;
+            this.item.push({ product, qty });
         } 
         
-        else 
-        {
-            this.item[product] = qty;
-        }
-        }
+        
         getCost(prices){
-            for(let value in this.item){
+            for(let value of this.item){
                 let totalcost=0;
-                if(prices[product])
-                {
-                    totalcost +=prices[product]* this.item[product];
-
+                if (prices[item.product])
+                 {
+                totalCost += prices[item.product] * item.qty;
+                 }
                 }
                
                 return totalcost;
                
               //  document.getElementById("output").innerHTML = totalcost;
-            }
+            
 
         }
 
     }
     const basket = new Basket();
-    product.addItem("banana", 3);
-    product.addItem("apple", 2);
-    product.addItem("banana", 4);
+    basket.addItem("banana", 3);
+    basket.addItem("apple", 2);
+    basket.addItem("banana", 4);
 
     const prices = {
         banana: 2,  
