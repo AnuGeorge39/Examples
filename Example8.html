@@ -6,8 +6,8 @@
 </head>
 <body>
     <h2>Example 8</h2><br>
-    
-    
+    <h3>Total cost of items in the basket is:<p id="totalCost"></p></h3>
+    <button onclick="buttonclick()">Calculate amount</button>
     
     <script>
 
@@ -16,21 +16,22 @@
     {
             constructor()
              {
-        this.item = [];
+        this.items = [];
             }
             
         addItem(product, qty)
         {
-            this.item.push({ product, qty });
+            this.items.push({ product, qty });
         } 
         
         
         getCost(prices){
-            for(let value of this.item){
-                let totalCost=0;
-                if (prices[value.product])
+            let totalCost=0;
+            for(let item of this.items){
+                
+                if (prices[item.product])
                  {
-                totalCost += prices[value.product] * value.qty;
+                totalCost += prices[item.product] * item.qty;
                  }
                 }
                
@@ -42,23 +43,25 @@
         }
 
     }
-    let basket = new Basket();
-    basket.addItem("banana", 3);
-    basket.addItem("apple", 2);
-    basket.addItem("banana", 4);
+    buttonclick()
+    {
+    let mybasket = new Basket();
+    
+    mybasket.addItem("apple", 2);
+    mybasket.addItem("banana", 4);
 
     const prices = {
-        banana: 2,  
-        apple: 1.5,
+        apple: 2,  
+        banana: 1.5,
         
-    }
+    };
 
-        let total = basket.getCost(prices);
+        let total = mybasket.getCost(prices);
         document.getElementById("totalCost").innerHTML = "Total Cost: $" + total.toFixed(2);
 
-
+    }
     
     </script>
-    <h3>Total cost of items in the basket is:<p id="totalCost"></p></h3>
+    
 </body>
 </html>
