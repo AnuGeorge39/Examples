@@ -7,11 +7,11 @@
 <body>
     <h3>Example 9</h3>
     <label for ="additem">Enter Item Name</label>
-    <input type="text" id="itemname">
+    <input type="text" id="itemname"><br>
     <label for ="addquantity">Enter Quantity</label>
-    <input type="text" id="itemqty">
+    <input type="text" id="itemqty"><br>
     <label for ="addprice">Enter Price/KG</label>
-    <input type="text" id="itemprice">
+    <input type="text" id="itemprice"><br>
     <button onclick="addItem()">Add Item</button>
 
     <script>
@@ -33,17 +33,17 @@
         const itemInput = document.getElementById("itemname");
         const itemQty = document.getElementById("itemqty");
         const itemPrice = document.getElementById("itemprice");
-        const itemName = itemInput.value.trim();
+       // const itemName = itemInput.value.trim();
             if(itemInput=="")
             {
                 alert("Please enter an item name.");
             //baskets.addItem(itemName)
             }
-            else if(itemQty=="")
+            elseif(itemQty=="")
             {
                 alert("Please enter item qty.");
             }
-            else(itemPrice=="")
+            elseif(itemPrice=="")
             {
                 alert("Please enter item price.");
 
