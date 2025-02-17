@@ -8,34 +8,46 @@
     <h3>Example 9</h3>
     <label for ="additem">Enter Item Name</label>
     <input type="text" id="itemname">
+    <label for ="addquantity">Enter Quantity</label>
+    <input type="text" id="itemqty">
+    <label for ="addprice">Enter Price/KG</label>
+    <input type="text" id="itemprice">
     <button onclick="addItem()">Add Item</button>
 
     <script>
         class Basket
         {
-            constructor(){
+            constructor()
+            {
                 this.items = [];
-
             }
-            addItem(item){
+            addItem(item)
+            {
                 this.items.push(item);
             }
 
         }
         let baskets = new Basket();
-       
-        function addItem() {
-    const itemInput = document.getElementById("itemname");
-    const itemName = itemInput.value.trim();
-    
+        function addItem() 
+        {
+        const itemInput = document.getElementById("itemname");
+        const itemQty = document.getElementById("itemqty");
+        const itemPrice = document.getElementById("itemprice");
+        const itemName = itemInput.value.trim();
+            if(itemInput=="")
+            {
+                alert("Please enter an item name.");
+            //baskets.addItem(itemName)
+            }
+            else if(itemQty=="")
+            {
+                alert("Please enter item qty.");
+            }
+            else(itemPrice=="")
+            {
+                alert("Please enter item price.");
 
-    if(itemName!==""){
-    
-    baskets.addItem(itemName)
-    }
-    else {
-        alert("Please enter an item name.");
-    }
+            }
         }
     </script>
 
