@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 9</title>
+</head>
+<body>
+    <h3>Example 9</h3>
+    <label for ="additem">Enter Item Name</label>
+    <input type="text" id="itemname">
+    <button onclick="additemname()">Add Item</button>
+
+    <script>
+        class Basket
+        {
+            constructor(){
+                this.items = [];
+
+            }
+            additemname(item){
+                this.items.push(item);
+            }
+
+        }
+        let baskets = new Basket();
+       
+        function addItem() {
+    const itemInput = document.getElementById("itemName");
+    const itemName = itemInput.value.trim();
+
+    if(itemName!==""){
+    
+    baskets.additemname(itemName)
+    }
+    else {
+        alert("Please enter an item name.");
+    }
+        }
+    </script>
+
+   
+</body>
+</html>
