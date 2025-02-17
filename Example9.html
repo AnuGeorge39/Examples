@@ -27,9 +27,16 @@
             {
                 this.items.push({product,qty,prices});
             }
+            calculateSum() {
+                let totalCost = 0;
+                for (let item of this.items) {
+                    totalCost += item.price * item.qty;
+                }
+                return totalCost;
+            }
 
         }
-        let baskets = new Basket();
+        let basket = new Basket();
         function addItem() 
         {
         const itemInput = document.getElementById("itemname");
@@ -37,8 +44,8 @@
         const itemPrice = document.getElementById("itemprice");
         
         const itemName = itemInput.value.trim();
-        const itemQuantity = itemQty.value.trim();
-        const itemValue = itemPrice.value.trim();
+        const itemQuantity = parseFloat(itemQty.value.trim());
+        const itemPriceValue = parseFloat(itemPrice.value.trim());
        
             if(itemName =="")
             {
@@ -53,23 +60,26 @@
                 alert("Please enter item price.");
 
             }
-            const total = Calculatesum();
-            document.getElementById("totalCost").innerHTML = "$" + total.toFixed(2);
-        }
+            else {
+                // Add the item to the basket
+                basket.addItem(itemName, itemQuantity, itemPriceValue);
 
-        function Calculatesum()
-        {
-            let totalCost=0;
-            for(let item of this.items){
-                
-                if (prices[item.product])
-                 {
-                totalCost += prices[item.product] * item.qty;
-                 }
-                }
-               alert(totalCost);
-                return totalCost;
-        }
+                // Calculate the total cost
+                const total = basket.calculateSum();
+
+                // Update the total cost on the page
+                document.getElementById("totalCost").innerHTML = "$" + total.toFixed(2);
+
+                // Clear input fields
+                itemInput.value = "";
+                itemQty.value = "";
+                itemPrice.value = "";
+            }
+
+
+   }
+
+       
     </script>
 
    
