@@ -8,7 +8,7 @@
     <h3>Example 9</h3>
     <label for ="additem">Enter Item Name</label>
     <input type="text" id="itemname">
-    <button onclick="additemname()">Add Item</button>
+    <button onclick="addItem()">Add Item</button>
 
     <script>
         class Basket
@@ -17,7 +17,7 @@
                 this.items = [];
 
             }
-            additemname(item){
+            addItem(item){
                 this.items.push(item);
             }
 
@@ -27,10 +27,11 @@
         function addItem() {
     const itemInput = document.getElementById("itemname");
     const itemName = itemInput.value.trim();
+    
 
     if(itemName!==""){
     
-    baskets.additemname(itemName)
+    baskets.addItem(itemName)
     }
     else {
         alert("Please enter an item name.");
