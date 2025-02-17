@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,27 +7,29 @@
 </head>
 <body>
     <h3>Example 9</h3>
-    <label for ="additem">Enter Item Name</label>
+    <label for="additem">Enter Item Name</label>
     <input type="text" id="itemname"><br>
-    <label for ="addquantity">Enter Quantity</label>
+    <label for="addquantity">Enter Quantity</label>
     <input type="text" id="itemqty"><br>
-    <label for ="addprice">Enter Price/KG</label>
+    <label for="addprice">Enter Price/KG</label>
     <input type="text" id="itemprice"><br>
     <button onclick="addItem()">Add Item</button><br>
     <p>Total Cost :</p><br>
     <p id="totalCost">$0.00</p>
 
     <script>
-        class Basket
-        {
-            constructor()
-            {
+        class Basket {
+            constructor() {
                 this.items = [];
             }
-            addItem(product,qty,prices)
-            {
-                this.items.push({product,qty,prices});
+
+            // Add item to the basket
+            addItem(product, qty, price) {
+                // Create an item object and add it to the items array
+                this.items.push({ product, qty, price });
             }
+
+            // Calculate total cost
             calculateSum() {
                 let totalCost = 0;
                 for (let item of this.items) {
@@ -34,33 +37,29 @@
                 }
                 return totalCost;
             }
-
         }
-        let basket = new Basket();
-        function addItem() 
-        {
-        const itemInput = document.getElementById("itemname");
-        const itemQty = document.getElementById("itemqty");
-        const itemPrice = document.getElementById("itemprice");
-        
-        const itemName = itemInput.value.trim();
-        const itemQuantity = parseFloat(itemQty.value.trim());
-        const itemPriceValue = parseFloat(itemPrice.value.trim());
-       
-            if(itemName ==="")
-            {
-                alert("Please enter an item name.");
-            }
-            else if(itemQuantity==="")
-            {
-                alert("Please enter item qty.");
-            }
-            else if(itemPriceValue==="")
-            {
-                alert("Please enter item price.");
 
-            }
-            else {
+        // Create a new Basket instance
+        let basket = new Basket();
+
+        // Function to handle adding an item to the basket
+        function addItem() {
+            const itemInput = document.getElementById("itemname");
+            const itemQty = document.getElementById("itemqty");
+            const itemPrice = document.getElementById("itemprice");
+
+            const itemName = itemInput.value.trim();
+            const itemQuantity = parseFloat(itemQty.value.trim());
+            const itemPriceValue = parseFloat(itemPrice.value.trim());
+
+            // Validation
+            if (itemName === "") {
+                alert("Please enter an item name.");
+            } else if (isNaN(itemQuantity) || itemQuantity <= 0) {
+                alert("Please enter a valid quantity.");
+            } else if (isNaN(itemPriceValue) || itemPriceValue <= 0) {
+                alert("Please enter a valid price.");
+            } else {
                 // Add the item to the basket
                 basket.addItem(itemName, itemQuantity, itemPriceValue);
 
@@ -71,17 +70,11 @@
                 document.getElementById("totalCost").innerHTML = "$" + total.toFixed(2);
 
                 // Clear input fields
-               // itemInput.value = "";
-               // itemQty.value = "";
-               // itemPrice.value = "";
+                itemInput.value = "";
+                itemQty.value = "";
+                itemPrice.value = "";
             }
-
-
-   }
-
-       
+        }
     </script>
-
-   
 </body>
 </html>
