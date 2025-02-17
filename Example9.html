@@ -14,7 +14,7 @@
     <input type="text" id="itemprice"><br>
     <button onclick="addItem()">Add Item</button><br>
     <p>Total Cost :</p><br>
-    <p id="totalCost"></p>
+    <p id="totalCost">$0.00</p>
 
     <script>
         class Basket
@@ -25,7 +25,7 @@
             }
             addItem(product,qty,prices)
             {
-                this.items.push(product,qty,prices);
+                this.items.push({product,qty,prices});
             }
 
         }
