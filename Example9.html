@@ -23,14 +23,15 @@
                 this.items = [];
             }
 
-            // Add item to the basket
-            addItem(product, qty, price) {
-                // Create an item object and add it to the items array
+           
+            addItem(product, qty, price)
+             {
                 this.items.push({ product, qty, price });
-            }
+             }
 
-            // Calculate total cost
-            calculateSum() {
+            
+            calculateSum() 
+            {
                 let totalCost = 0;
                 for (let item of this.items) {
                     totalCost += item.price * item.qty;
@@ -39,11 +40,10 @@
             }
         }
 
-        // Create a new Basket instance
-        let basket = new Basket();
-
-        // Function to handle adding an item to the basket
-        function addItem() {
+        
+          let basket = new Basket();
+        function addItem() 
+        {
             const itemInput = document.getElementById("itemname");
             const itemQty = document.getElementById("itemqty");
             const itemPrice = document.getElementById("itemprice");
@@ -52,21 +52,23 @@
             const itemQuantity = parseFloat(itemQty.value.trim());
             const itemPriceValue = parseFloat(itemPrice.value.trim());
 
-            // Validation
-            if (itemName === "") {
+            if (itemName === "")
+             {
                 alert("Please enter an item name.");
-            } else if (isNaN(itemQuantity) || itemQuantity <= 0) {
+            } 
+            else if (isNaN(itemQuantity) || itemQuantity <= 0) 
+            {
                 alert("Please enter a valid quantity.");
-            } else if (isNaN(itemPriceValue) || itemPriceValue <= 0) {
+            } 
+            else if (isNaN(itemPriceValue) || itemPriceValue <= 0) 
+            {
                 alert("Please enter a valid price.");
-            } else {
-                // Add the item to the basket
+            } 
+            else 
+            {
                 basket.addItem(itemName, itemQuantity, itemPriceValue);
 
-                // Calculate the total cost
                 const total = basket.calculateSum();
-
-                // Update the total cost on the page
                 document.getElementById("totalCost").innerHTML = "$" + total.toFixed(2);
 
                 // Clear input fields
