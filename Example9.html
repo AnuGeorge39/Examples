@@ -53,11 +53,11 @@
                 alert("Please enter item price.");
 
             }
-            const total = Calculatesum(quantity,price);
+            const total = Calculatesum();
             document.getElementById("totalCost").innerHTML = "$" + total.toFixed(2);
         }
 
-        function Calculatesum(qty,pri)
+        function Calculatesum()
         {
             let totalCost=0;
             for(let item of this.items){
@@ -67,7 +67,7 @@
                 totalCost += prices[item.product] * item.qty;
                  }
                 }
-               
+               alert(totalCost);
                 return totalCost;
         }
     </script>
