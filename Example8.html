@@ -16,18 +16,18 @@
     {
             constructor()
              {
-        this.items = [];
+        this.value = [];
             }
             
         addItem(product, qty)
         {
-            this.items.push({ product, qty });
+            this.value.push({ product, qty });
         } 
         
         
         getCost(prices){
             let totalCost=0;
-            for(let item of this.items){
+            for(let item of this.value){
                 
                 if (prices[item.product])
                  {
@@ -45,10 +45,10 @@
     }
    function buttonclick()
     {
-    let mybasket = new Basket();
+    let basket = new Basket();
     
-    mybasket.addItem("apple", 2);
-    mybasket.addItem("banana", 4);
+    baskets.addItem("apple", 2);
+    baskets.addItem("banana", 4);
 
     const prices = {
         apple: 2,  
@@ -56,7 +56,7 @@
         
     };
 
-        let total = mybasket.getCost(prices);
+        let total = baskets.getCost(prices);
         document.getElementById("totalCost").innerHTML = "$" + total.toFixed(2);
 
     }
