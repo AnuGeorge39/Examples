@@ -12,7 +12,9 @@
     <input type="text" id="itemqty"><br>
     <label for ="addprice">Enter Price/KG</label>
     <input type="text" id="itemprice"><br>
-    <button onclick="addItem()">Add Item</button>
+    <button onclick="addItem()">Add Item</button><br>
+    <p>Total Cost :</p><br>
+    <p id="totalCost"></p>
 
     <script>
         class Basket
@@ -21,9 +23,9 @@
             {
                 this.items = [];
             }
-            addItem(item)
+            addItem(product,qty,prices)
             {
-                this.items.push(item);
+                this.items.push(product,qty,prices);
             }
 
         }
@@ -34,14 +36,13 @@
         const itemQty = document.getElementById("itemqty");
         const itemPrice = document.getElementById("itemprice");
         
-       const itemName = itemInput.value.trim();
-       const itemQuantity = itemQty.value.trim();
-       const itemValue = itemPrice.value.trim();
-       //alert(itemName);
+        const itemName = itemInput.value.trim();
+        const itemQuantity = itemQty.value.trim();
+        const itemValue = itemPrice.value.trim();
+       
             if(itemName =="")
             {
                 alert("Please enter an item name.");
-            //baskets.addItem(itemName)
             }
             else if(itemQuantity=="")
             {
@@ -52,6 +53,22 @@
                 alert("Please enter item price.");
 
             }
+            const total = Calculatesum(quantity,price);
+            document.getElementById("totalCost").innerHTML = "$" + total.toFixed(2);
+        }
+
+        function Calculatesum(qty,pri)
+        {
+            let totalCost=0;
+            for(let item of this.items){
+                
+                if (prices[item.product])
+                 {
+                totalCost += prices[item.product] * item.qty;
+                 }
+                }
+               
+                return totalCost;
         }
     </script>
 
